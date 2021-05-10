@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById("txt").innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+   
+    nav{
+        background-color: blueviolet;
+        color: white;
+        text-align: center;
+        margin: 0;
+    }
+    h1{
+        padding: 5px;
+        font-size: 50px;
+    }
+    div{
+        text-align: center;
+        margin-top: 6%;
+        margin-bottom: 5%;
+        width: 30rem;
+        height: 21rem;
+        font-size: 5rem;
+        background-color: rgb(186, 127, 241) ;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 11rem;
+        border-radius: 22rem;
+        
+    }
+</style>
+<body onload="startTime()">
+    <nav>
+        <h1>
+            A SIMPLE CLOCK
+        </h1>
+    </nav>
+<div id="txt"></div>
+
+</body>
+</html>
